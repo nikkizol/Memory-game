@@ -12,18 +12,33 @@ body {
     margin: 2%;
 }
 
-.cards  {
+.cards {
     display: block;
     height: 200px;
     width: 160px;
     position: relative;
     margin: auto;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+
+}
+
+.cards.flip {
+    transform: rotateY(180deg);
+}
+
+.cards:active {
+    transform: scale(0.97);
+    transition: transform .2s;
 }
 
 .board {
     width: 760px;
     margin: auto;
+    perspective: 1000px;
 }
+
 
 .front-image,
 .back-image {
@@ -33,4 +48,9 @@ body {
     position: absolute;
     border-radius: 5px;
     background: grey;
+    -webkit-backface-visibility: hidden;
+}
+
+.front-image {
+    transform: rotateY(180deg);
 }
