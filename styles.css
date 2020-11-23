@@ -47,7 +47,8 @@ body {
     padding: 10px;
     position: absolute;
     border-radius: 5px;
-    background: grey;
+    border: grey solid;
+    background: white;
     -webkit-backface-visibility: hidden;
 }
 
